@@ -1,1 +1,116 @@
-{}
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/theme/theme.json b/theme/theme.json
+index 0967ef424bce6791893e9a57bb952f80fd536e93..583dffa77a03b82c7ab69f6e6faf550fd40058f5 100644
+--- a/theme/theme.json
++++ b/theme/theme.json
+@@ -1 +1,106 @@
+-{}
++{
++  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/main/Report%20Theme%20JSON%20Schema/reportThemeSchema.json",
++  "name": "Project Portfolio Theme",
++  "foreground": "#1F2937",
++  "background": "#F8FAFC",
++  "tableAccent": "#2563EB",
++  "dataColors": [
++    "#2563EB",
++    "#10B981",
++    "#F59E0B",
++    "#EF4444",
++    "#8B5CF6",
++    "#06B6D4"
++  ],
++  "visualStyles": {
++    "*": {
++      "*": {
++        "title": [
++          {
++            "show": true,
++            "fontFamily": "Segoe UI Semibold",
++            "fontSize": 12,
++            "color": { "solid": { "color": "#111827" } }
++          }
++        ],
++        "labels": [
++          {
++            "color": { "solid": { "color": "#374151" } },
++            "fontSize": 10
++          }
++        ],
++        "background": [
++          {
++            "show": true,
++            "color": { "solid": { "color": "#FFFFFF" } },
++            "transparency": 0
++          }
++        ],
++        "border": [
++          {
++            "show": true,
++            "color": { "solid": { "color": "#E5E7EB" } },
++            "radius": 6
++          }
++        ]
++      }
++    },
++    "card": {
++      "*": {
++        "labels": [
++          {
++            "fontSize": 18,
++            "color": { "solid": { "color": "#111827" } }
++          }
++        ],
++        "categoryLabels": [
++          {
++            "fontSize": 10,
++            "color": { "solid": { "color": "#6B7280" } }
++          }
++        ]
++      }
++    },
++    "tableEx": {
++      "*": {
++        "grid": [
++          {
++            "gridVertical": true,
++            "gridHorizontal": true,
++            "outlineColor": { "solid": { "color": "#E5E7EB" } }
++          }
++        ],
++        "columnHeaders": [
++          {
++            "fontFamily": "Segoe UI Semibold",
++            "fontSize": 10,
++            "foregroundColor": { "solid": { "color": "#111827" } },
++            "backgroundColor": { "solid": { "color": "#F3F4F6" } }
++          }
++        ],
++        "values": [
++          {
++            "fontSize": 10,
++            "foregroundColor": { "solid": { "color": "#374151" } }
++          }
++        ]
++      }
++    },
++    "slicer": {
++      "*": {
++        "title": [
++          {
++            "fontFamily": "Segoe UI Semibold",
++            "fontSize": 11
++          }
++        ],
++        "items": [
++          {
++            "fontSize": 10,
++            "color": { "solid": { "color": "#374151" } }
++          }
++        ]
++      }
++    }
++  }
++}
+ 
+EOF
+)
